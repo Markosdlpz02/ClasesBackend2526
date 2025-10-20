@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import axios from "axios"
+import { setTimeout } from "timers";
 
 // Tipos
 
@@ -108,8 +109,8 @@ const testApi = async (equipos:Team[]) => {
 
 };
 
-setTimeout(() => {
-    testApi(teams)
+setTimeout(async () => {
+  await testApi(teams);
 }, 1000);
 
 
